@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **account_id** | **int** |  | [optional] 
 **setting_name** | **str** |  | 
-**value** | **object** |  | [optional] 
+**value** | [**AccountSettingValue**](AccountSettingValue.md) |  | [optional] 
 
 ## Example
 

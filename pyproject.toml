@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "skybox_openapi_client"
-version = "1.0.0"
+version = "1.0.1"
 description = "SkyBox API"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"
