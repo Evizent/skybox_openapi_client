@@ -6,21 +6,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | the account id (ignored by API) | [optional] 
-**company** | **str** | the company name | 
-**email** | **str** | the account contact email address | 
-**first_name** | **str** | account contact&#39;s first name | 
-**last_name** | **str** | account contact&#39;s last name | 
-**phone** | **str** | account contact&#39;s phone number | 
+**company** | **str** | the company name | [optional] 
+**email** | **str** | the account contact email address | [optional] 
+**first_name** | **str** | account contact&#39;s first name | [optional] 
+**last_name** | **str** | account contact&#39;s last name | [optional] 
+**phone** | **str** | account contact&#39;s phone number | [optional] 
 **external_merchant_id** | **str** | account external merchant id | [optional] 
 **creation_date** | **datetime** |  | [optional] 
 **last_update** | **datetime** |  | [optional] 
-**address1** | **str** | the company&#39;s 1st address line | 
-**address2** | **str** | the company&#39;s 2nd address line | 
-**city** | **str** | the company&#39;s city | 
-**state** | **str** | the company&#39;s state | 
-**postal_code** | **str** | the company&#39;s postal code | 
-**country** | **str** | the company&#39;s country | 
-**logo** | **str** | the company logo | 
+**address1** | **str** | the company&#39;s 1st address line | [optional] 
+**address2** | **str** | the company&#39;s 2nd address line | [optional] 
+**city** | **str** | the company&#39;s city | [optional] 
+**state** | **str** | the company&#39;s state | [optional] 
+**postal_code** | **str** | the company&#39;s postal code | [optional] 
+**country** | **str** | the company&#39;s country | [optional] 
+**logo** | **str** | the company logo | [optional] 
 **native_integration_enabled** | **bool** |  | [optional] 
 **opt_in_stf** | **bool** |  | [optional] 
 **accounting** | **bool** |  | [optional] 

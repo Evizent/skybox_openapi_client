@@ -295,5 +295,4 @@ skybox_openapi_client/py.typed
 skybox_openapi_client/rest.py
 test-requirements.txt
 test/__init__.py
-test/test_account_setting_value.py
 tox.ini
