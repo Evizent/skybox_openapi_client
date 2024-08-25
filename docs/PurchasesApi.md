@@ -1022,7 +1022,7 @@ configuration.api_key['Application_Token'] = os.environ["API_KEY"]
 with skybox_openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = skybox_openapi_client.PurchasesApi(api_client)
-    purchase = skybox_openapi_client.Purchase() # Purchase | A purchase object to create.
+    purchase = {"vendorId":1994249,"lines":[{"quantity":4,"amount":99,"lineType":"PURCHASE","lineItemType":"INVENTORY","inventory":{"eventId":4936321,"quantity":4,"section":"ORCH-L","row":"T","lowSeat":9,"highSeat":12,"cost":99,"faceValue":99,"stockType":"MOBILE_TRANSFER","seatType":"CONSECUTIVE","broadcast":false,"hideSeatNumbers":true,"zoneSeating":false,"filesUploaded":false,"barCodesEntered":false,"instantTransfer":false},"cancelled":false,"delete":false,"cancel":false,"fillLineId":0}]} # Purchase | A purchase object to create.
 
     try:
         api_response = api_instance.purchases_insert_purchase(purchase)
