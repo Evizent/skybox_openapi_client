@@ -10,28 +10,28 @@ Name | Type | Description | Notes
 **account_id** | **int** |  | [optional] 
 **internal_id** | **int** |  | [optional] 
 **lines** | [**List[Line]**](Line.md) |  | 
-**purchase_term** | **str** |  | 
+**purchase_term** | **str** |  | [optional] 
 **payment_method** | **str** |  | 
 **payment_ref** | **str** |  | [optional] 
 **delivery_method** | **str** |  | 
 **shipping_address_id** | **int** |  | [optional] 
 **billing_address_id** | **int** |  | [optional] 
-**tax_amount** | **float** |  | 
-**shipping_amount** | **float** |  | 
-**other_amount** | **float** |  | 
+**tax_amount** | **float** |  | [optional] 
+**shipping_amount** | **float** |  | [optional] 
+**other_amount** | **float** |  | [optional] 
 **internal_notes** | **str** |  | [optional] 
 **public_notes** | **str** |  | [optional] 
 **created_date** | **datetime** |  | [optional] 
 **last_update** | **datetime** |  | [optional] 
-**due_date** | **datetime** |  | 
+**due_date** | **datetime** |  | [optional] 
 **tags** | **str** |  | [optional] 
 **created_by** | **str** |  | [optional] 
 **last_update_by** | **str** |  | [optional] 
 **external_ref** | **str** | External reference number for purchase | [optional] 
-**payment_status** | **str** | Payment status | 
+**payment_status** | **str** | Payment status | [optional] 
 **credit_card_id** | **int** |  | [optional] 
 **credit_card_group_id** | **int** |  | [optional] 
-**currency_code** | **str** |  | 
+**currency_code** | **str** |  | [optional] 
 **payments** | [**List[PurchasePayment]**](PurchasePayment.md) |  | [optional] 
 **notes** | [**List[PurchaseNote]**](PurchaseNote.md) |  | [optional] 
 **received** | **bool** |  | [optional] 

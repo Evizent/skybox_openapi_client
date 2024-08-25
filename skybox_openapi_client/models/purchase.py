@@ -37,28 +37,28 @@ class Purchase(BaseModel):
     account_id: Optional[StrictInt] = Field(default=None, alias="accountId")
     internal_id: Optional[StrictInt] = Field(default=None, alias="internalId")
     lines: List[Line]
-    purchase_term: StrictStr = Field(alias="purchaseTerm")
+    purchase_term: Optional[StrictStr] = Field(default=None, alias="purchaseTerm")
     payment_method: StrictStr = Field(alias="paymentMethod")
     payment_ref: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=45)]] = Field(default=None, alias="paymentRef")
     delivery_method: StrictStr = Field(alias="deliveryMethod")
     shipping_address_id: Optional[Annotated[int, Field(strict=True, ge=1)]] = Field(default=None, alias="shippingAddressId")
     billing_address_id: Optional[Annotated[int, Field(strict=True, ge=1)]] = Field(default=None, alias="billingAddressId")
-    tax_amount: Union[StrictFloat, StrictInt] = Field(alias="taxAmount")
-    shipping_amount: Union[StrictFloat, StrictInt] = Field(alias="shippingAmount")
-    other_amount: Union[StrictFloat, StrictInt] = Field(alias="otherAmount")
+    tax_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="taxAmount")
+    shipping_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="shippingAmount")
+    other_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="otherAmount")
     internal_notes: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=10000)]] = Field(default=None, alias="internalNotes")
     public_notes: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=10000)]] = Field(default=None, alias="publicNotes")
     created_date: Optional[datetime] = Field(default=None, alias="createdDate")
     last_update: Optional[datetime] = Field(default=None, alias="lastUpdate")
-    due_date: datetime = Field(alias="dueDate")
+    due_date: Optional[datetime] = Field(default=None, alias="dueDate")
     tags: Optional[StrictStr] = None
     created_by: Optional[StrictStr] = Field(default=None, alias="createdBy")
     last_update_by: Optional[StrictStr] = Field(default=None, alias="lastUpdateBy")
     external_ref: Optional[StrictStr] = Field(default=None, description="External reference number for purchase", alias="externalRef")
-    payment_status: StrictStr = Field(description="Payment status", alias="paymentStatus")
+    payment_status: Optional[StrictStr] = Field(default=None, description="Payment status", alias="paymentStatus")
     credit_card_id: Optional[StrictInt] = Field(default=None, alias="creditCardId")
     credit_card_group_id: Optional[StrictInt] = Field(default=None, alias="creditCardGroupId")
-    currency_code: StrictStr = Field(alias="currencyCode")
+    currency_code: Optional[StrictStr] = Field(default=None, alias="currencyCode")
     payments: Optional[List[PurchasePayment]] = None
     notes: Optional[List[PurchaseNote]] = None
     received: Optional[StrictBool] = None
@@ -73,6 +73,9 @@ class Purchase(BaseModel):
     @field_validator('purchase_term')
     def purchase_term_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['NET0', 'NET10', 'NET15', 'NET25', 'NET30', 'NET45', 'NET60']):
             raise ValueError("must be one of enum values ('NET0', 'NET10', 'NET15', 'NET25', 'NET30', 'NET45', 'NET60')")
         return value
@@ -94,6 +97,9 @@ class Purchase(BaseModel):
     @field_validator('payment_status')
     def payment_status_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['UNPAID', 'PAID', 'PARTIAL', 'VOID']):
             raise ValueError("must be one of enum values ('UNPAID', 'PAID', 'PARTIAL', 'VOID')")
         return value
@@ -101,6 +107,9 @@ class Purchase(BaseModel):
     @field_validator('currency_code')
     def currency_code_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['USD', 'CAD', 'EUR', 'GBP', 'JPY', 'BRL', 'XBT', 'AUD', 'MXN']):
             raise ValueError("must be one of enum values ('USD', 'CAD', 'EUR', 'GBP', 'JPY', 'BRL', 'XBT', 'AUD', 'MXN')")
         return value
