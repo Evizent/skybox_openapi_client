@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **tickets** | [**List[Ticket]**](Ticket.md) |  | [optional] 
 **ticket_ids** | **List[int]** |  | [optional] 
 **stock_type** | **str** |  | 
-**split_type** | **str** | How the tickets may be split | 
+**split_type** | **str** | How the tickets may be split | [default to 'DEFAULT']
 **custom_split** | **str** |  | [optional] 
 **list_price** | **float** |  | [optional] 
 **vivid_retail_price** | **float** |  | [optional] 

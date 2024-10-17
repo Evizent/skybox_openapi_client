@@ -227,7 +227,7 @@ class Inventory(BaseModel):
             "tickets": [Ticket.from_dict(_item) for _item in obj["tickets"]] if obj.get("tickets") is not None else None,
             "ticketIds": obj.get("ticketIds"),
             "stockType": obj.get("stockType"),
-            "splitType": obj.get("splitType"),
+            "splitType": obj.get("splitType") if obj.get("splitType") is not None else 'DEFAULT',
             "customSplit": obj.get("customSplit"),
             "listPrice": obj.get("listPrice"),
             "vividRetailPrice": obj.get("vividRetailPrice"),
